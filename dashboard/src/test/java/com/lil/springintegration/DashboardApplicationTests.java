@@ -1,5 +1,6 @@
 package com.lil.springintegration;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,8 +12,10 @@ class DashboardApplicationTests {
 
 	@Test
 	void contextLoads() {
-		//AbstractApplicationContext context = new ClassPathXmlApplicationContext("", DashboardApplicationTests.class);
+		AbstractApplicationContext context = new ClassPathXmlApplicationContext("/META-INF/spring/application.xml", DashboardApplicationTests.class);
 		try {
+			Object testMessageFlowImports = context.getBean("testMessageFlowImports");
+			Assertions.assertNotNull(testMessageFlowImports);
 			// look for imported bean
 			System.out.println("Spring Integration message flows imported successfully!");
 			assert(true);

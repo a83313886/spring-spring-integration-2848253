@@ -22,5 +22,8 @@
     </beans:bean>
 
     <!-- Import Spring Integration Message Flows Here -->
-
+    <import resource="classpath:META-INF/spring/integration/grid-status.xml"/>
+    <import resource="classpath:META-INF/spring/integration/kineteco-news.xml"/>
+    <import resource="classpath:META-INF/spring/integration/power-usage.xml"/>
+    <import resource="classpath:META-INF/spring/integration/tech-support.xml"/>
 </beans:beans>
